@@ -4,7 +4,7 @@ import Fastify, { FastifyReply, FastifyRequest } from "fastify";
 
 const fastify = Fastify({ logger: true });
 
-fastify.get("/api/", async (req: FastifyRequest, reply: FastifyReply) => {
+fastify.get("/api", async (req: FastifyRequest, reply: FastifyReply) => {
   reply.send({ hello: "world" });
 });
 
