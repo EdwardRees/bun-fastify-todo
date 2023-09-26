@@ -4,5 +4,9 @@
       "source": "/(.*)",
       "destination": "/dist/index.js"
     }
-  ]
+  ],
+  "functions": {
+    "dist/index.js": {
+    }
+  }
 }
