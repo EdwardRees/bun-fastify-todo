@@ -1,20 +1,13 @@
-import Fastify, { FastifyReply, FastifyRequest } from "fastify";
+import * as dotenv from 'dotenv';
+dotenv.config();
 
+import Fastify from 'fastify';
 
+const app = Fastify({ logger: true });
 
-const fastify = Fastify({ logger: true });
+app.register(import('./app'));
 
-fastify.get("/api", async (req: FastifyRequest, reply: FastifyReply) => {
-  reply.send({ hello: "world" });
-});
-
-const start = async () => {
-  try {
-    await fastify.listen({ port: 3000 || process.env.PORT });
-  } catch (err) {
-    fastify.log.error(err);
-    process.exit(1);
-  }
-};
-
-start();
+export default async (req: Request, res: Response) => {
+  await app.ready();
+  app.server.emit('request', req, res);
+}
