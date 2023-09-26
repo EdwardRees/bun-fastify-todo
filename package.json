@@ -1,0 +1,21 @@
+{
+  "name": "fastify-todo",
+  "version": "1.0.0",
+  "description": "A simple todo crud backend written with Fastify",
+  "main": "index.js",
+  "author": "Edward Rees",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "bun --bun run src/index.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.36.0",
+    "fastify": "^4.23.2",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.7.0",
+    "dotenv": "^16.3.1"
+  }
+}
